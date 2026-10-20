@@ -49,7 +49,39 @@ Hogyan működnek és miben térnek el a stratégiák?
 <!-- @note -->
 > Nincs bejelentkezés: mindenki ugyanazt a felületet használja, csak más céllal.
 > Show-tervező: melyik megoldás a legjobb az adott drónokkal.
-> Kísérletező: hallgató vagy kutató, a stratégiák összehasonlítása.
+> Kísérletező: hallgató vagy kutató, a stratégiák összehasonlítása
+
+---
+
+<!-- @slide Kezdeti felhasználói utak -->
+
+## Kezdeti felhasználói utak
+
+```mermaid
+flowchart LR
+  A[Beállítások] --> C[Tervezés]
+  C --> D{Sikerült?}
+  D -- nem --> G[Hibajelzés]
+  G --> A
+  D -- igen --> H[3D lejátszás]
+  H --> I[Mért értékek]
+```
+
+<!-- @columns 2 6 -->
+
+1. **Tervezés:** alakzat, paraméter, stratégia, szint
+2. **3D lejátszás**, ütközők pirossal
+
+<!-- @col-break -->
+
+3. **Összehasonlítás** táblázatban
+4. **Egyedi formáció:** JSON / CSV
+
+<!-- @columns -->
+
+<!-- @note -->
+> Sikertelen tervezés: a választott szint nem tudja feloldani az ütközést.
+> Összehasonlítás: ugyanarra a bemenetre több stratégia és szint, idő, távolság, ütközések egy táblázatban.
 
 ---
 
@@ -127,38 +159,6 @@ Hogyan működnek és miben térnek el a stratégiák?
 > A hozzárendelés és az ütközéskezelés külön választható, bármelyik kombinálható.
 > A 0. szint a viszonyítási alap: ehhez mérjük a többletidőt.
 > Ezért számít a hozzárendelés: a naiv sok helycserét és keresztezést ad.
-
----
-
-<!-- @slide Kezdeti felhasználói utak -->
-
-## Kezdeti felhasználói utak
-
-```mermaid
-flowchart LR
-  A[Beállítások] --> C[Tervezés]
-  C --> D{Sikerült?}
-  D -- nem --> G[Hibajelzés]
-  G --> A
-  D -- igen --> H[3D lejátszás]
-  H --> I[Mért értékek]
-```
-
-<!-- @columns 2 6 -->
-
-1. **Tervezés:** alakzat, paraméter, stratégia, szint
-2. **3D lejátszás**, ütközők pirossal
-
-<!-- @col-break -->
-
-3. **Összehasonlítás** táblázatban
-4. **Egyedi formáció:** JSON / CSV
-
-<!-- @columns -->
-
-<!-- @note -->
-> Sikertelen tervezés: a választott szint nem tudja feloldani az ütközést.
-> Összehasonlítás: ugyanarra a bemenetre több stratégia és szint, idő, távolság, ütközések egy táblázatban.
 
 ---
 
