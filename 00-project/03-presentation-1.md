@@ -86,6 +86,27 @@ Hogyan működnek és miben térnek el a stratégiák?
 
 ---
 
+<!-- @slide Hozzárendelési stratégiák -->
+
+## Hozzárendelési stratégiák
+
+<!-- @scale 90% -->
+| Stratégia | Működés | Jellemző |
+| --- | --- | --- |
+| **Naiv** | Az i-edik drón az i-edik célba megy | Sok keresztezés |
+| **Mohó** | Sorban a **legközelebbi szabad** cél | Gyors, de nem optimális |
+| **Optimális** | Magyar módszer, **minimális** össztávolság | Kevés keresztezés, nincs helycsere |
+
+<!-- @reveal -->
+<!-- @callout info -->
+> Mérjük: idő, összes út, számítási idő, ütközések.
+
+<!-- @note -->
+> Optimális: a távolságnégyzetek összegét minimalizálja.
+> A jó hozzárendelés már önmagában csökkenti az ütközéseket.
+
+---
+
 <!-- @slide Ütközéskezelési szintek -->
 
 ## Ütközéskezelés szintenként
@@ -141,6 +162,40 @@ flowchart LR
 
 ---
 
+<!-- @slide Felhasználói felület -->
+
+## Felhasználói felület (vázlat)
+
+<!-- @scale 60% -->
+```text
++---------------------------+---------------------------------------+
+| BEÁLLÍTÁSOK               |                                       |
+| Kezdő: [Rács – 100    v]  |                                       |
+| Cél:   [Gömb – 100    v]  |               3D nézet                |
+| v_max [10]  a_max [4]     |       (forgatható, nagyítható,        |
+| d_safe [1]                |        ütköző drónok pirossal)        |
+| Hozzárend. [Optimális v]  |                                       |
+| Ütközés    [1. Késl.  v]  |                                       |
+| [Tervezés] [Összehas.]    |                                       |
++-------------------------------------------------------------------+
+| |<  >  ||   00:12 / 00:25          sebesség [1x v]                |
++-------------------------------------------------------------------+
+| Hozzárend.  Szint  Idő    Távolság  Ütközés  Többlet              |
+| Naiv          1    46 s   3 420 m      57    +15 s                |
+| Optimális     1    25 s   2 310 m       3    +1 s                 |
++-------------------------------------------------------------------+
+```
+
+<!-- @note -->
+> Egyetlen oldal: bal oldalt beállítások, jobb oldalt 3D nézet, alul lejátszás és mérések.
+> A drónszám a választott presetből adódik.
+
+---
+
 <!-- @slide Következő lépések -->
 
 ## Következő lépések
+
+- Visszajelzések beépítése a specifikációba
+- Technikai javaslat → **2. prezentáció**
+- Következő félév: mag és 0–1. szint, kliens és mérések
